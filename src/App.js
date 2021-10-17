@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react';
+import { QuestionContext } from './components/Context';
+import Question from './components/Question';
+import Results from './components/Results';
+import './styles/App.scss';
 
 function App() {
+  const {isLastQuestion} = useContext(QuestionContext)
+
+  if(!isLastQuestion) document.querySelector('.quiz__wrapper').classList.add('results-open')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="quiz__wrapper">
+      {isLastQuestion && <Question />}
+      <Results />
     </div>
   );
 }
