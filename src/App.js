@@ -7,7 +7,7 @@ import './styles/App.scss';
 function App() {
   const {isLastQuestion} = useContext(QuestionContext)
 
-  if(!isLastQuestion) document.querySelector('.quiz__wrapper').classList.add('results-open')
+  !isLastQuestion && document.querySelector('.quiz__wrapper').classList.add('results-open')
 
   return (
     <div className="quiz__wrapper">

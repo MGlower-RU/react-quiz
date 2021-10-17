@@ -18,7 +18,7 @@ export default function Question() {
 
   function handleSubmit() {
     const isAnswerCorrect = currAnswer.toLowerCase() === questionData.correctAnswer.toLowerCase()
-    setCorrectAnswers([...correctAnswers, {isAnswerCorrect, answer: currAnswer}])
+    setCorrectAnswers([...correctAnswers, {isAnswerCorrect, answer: currAnswer, correct: questionData.correctAnswer}])
     setQuestionNumber(num => num + 1)
   }
 

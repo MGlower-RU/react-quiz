@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { questions } from './QuestionsData';
+import { questions, shuffle } from './QuestionsData';
 
 export const QuestionContext = createContext();
 
@@ -9,7 +9,7 @@ export default function Context(props) {
   const isLastQuestion = questionNumber < questions.length;
 
   return (
-    <QuestionContext.Provider value={{questions, questionNumber, setQuestionNumber, setCorrectAnswers, correctAnswers, isLastQuestion}}>
+    <QuestionContext.Provider value={{questions, shuffle, questionNumber, setQuestionNumber, setCorrectAnswers, correctAnswers, isLastQuestion}}>
       {props.children}
     </QuestionContext.Provider>
   )
