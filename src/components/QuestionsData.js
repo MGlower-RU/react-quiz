@@ -9,6 +9,16 @@ export const questions = [
     answers: ['13', '24', '17'],
     correctAnswer: '17'
   },
+  {
+    question: 'Which is the country of Russia?',
+    answers: ['Saint-Petersburg', 'Moscow', 'Dublin', 'Oslo'],
+    correctAnswer: 'Moscow'
+  },
+  {
+    question: 'The unicorn is the national animal of Scotland?',
+    answers: ['True', 'False'],
+    correctAnswer: 'True'
+  },
 ]
 
 shuffle(questions)
